@@ -72,5 +72,12 @@ class Program
         {
             Console.WriteLine($"Id: {student.Id}, Name: {student.Name}, Score: {student.Score}");
         }
+
+        // Bài 11. Lấy sinh viên điểm cao nhất
+        var highestScoreStudent = students.OrderByDescending(s => s.Score).FirstOrDefault();
+        if (highestScoreStudent != null)
+        {
+            Console.WriteLine($"Sinh viên điểm cao nhất: Id: {highestScoreStudent.Id}, Name: {highestScoreStudent.Name}, Score: {highestScoreStudent.Score}");
+        }
     }
 }
