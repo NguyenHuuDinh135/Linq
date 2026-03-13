@@ -19,5 +19,9 @@ class Program
         List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
         var evenNumbers = numbers.Where(n => n % 2 == 0);
         Console.WriteLine("Các số chẵn: " + string.Join(", ", evenNumbers));
+
+        // Bài 2. Lọc số lớn hơn 5
+        var numbersGreaterThan5 = numbers.Where(n => n > 5);
+        Console.WriteLine("Các số > 5: " + string.Join(", ", numbersGreaterThan5));
     }
 }
