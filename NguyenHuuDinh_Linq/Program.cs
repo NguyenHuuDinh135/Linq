@@ -15,6 +15,9 @@ namespace NguyenHuuDinh_Linq
                 Console.WriteLine("1. Exercise 1 - Filter even numbers");
                 Console.WriteLine("2. Exercise 2 - Select names starting with A");
                 Console.WriteLine("3. Exercise 3 - Group words by first letter");
+                Console.WriteLine("4. Exercise 4 - Sum numbers 1 to 100");
+                Console.WriteLine("5. Exercise 5 - Order names alphabetically");
+                Console.WriteLine("6. Exercise 6 - Join students with scores");
                 Console.WriteLine("0. Exit");
                 Console.Write("Choose an exercise: ");
 
@@ -35,6 +38,15 @@ namespace NguyenHuuDinh_Linq
                         break;
                     case 3:
                         Exercises.Exercise3();
+                        break;
+                    case 4:
+                        Exercises.Exercise4();
+                        break;
+                    case 5:
+                        Exercises.Exercise5();
+                        break;
+                    case 6:
+                        Exercises.Exercise6();
                         break;
                     case 0:
                         return;
@@ -80,6 +92,42 @@ namespace NguyenHuuDinh_Linq
             foreach (var grp in groups)
             {
                 Console.WriteLine($"Words starting with '{grp.Key}': {string.Join(", ", grp)}");
+            }
+            Pause();
+        }
+
+        public static void Exercise4()
+        {
+            Console.WriteLine("Exercise 4 - Sum numbers 1 to 100");
+            var sum = Enumerable.Range(1, 100).Sum();
+            Console.WriteLine($"Sum of numbers from 1 to 100: {sum}");
+            Pause();
+        }
+
+        public static void Exercise5()
+        {
+            Console.WriteLine("Exercise 5 - Order names alphabetically");
+            var names = new List<string> { "Charlie", "Alice", "Bob", "David" };
+            var ordered = names.OrderBy(n => n);
+            Console.WriteLine("Ordered names:");
+            foreach (var name in ordered)
+            {
+                Console.WriteLine(name);
+            }
+            Pause();
+        }
+
+        public static void Exercise6()
+        {
+            Console.WriteLine("Exercise 6 - Join students with scores");
+            var students = new[] { new { Id = 1, Name = "Alice" }, new { Id = 2, Name = "Bob" }, new { Id = 3, Name = "Charlie" } };
+            var scores = new[] { new { StudentId = 1, Score = 95 }, new { StudentId = 2, Score = 88 }, new { StudentId = 3, Score = 76 } };
+            var query = from s in students
+                        join sc in scores on s.Id equals sc.StudentId
+                        select new { s.Name, sc.Score };
+            foreach (var item in query)
+            {
+                Console.WriteLine($"{item.Name}: {item.Score}");
             }
             Pause();
         }
