@@ -331,12 +331,68 @@ namespace NguyenHuuDinh_Linq
             Console.WriteLine(anyFail ? "There is a failing student" : "No failing students");
             Pause();
         }
-        public static void Exercise15() { Console.WriteLine("TODO: exercise15"); Pause(); }
-        public static void Exercise16() { Console.WriteLine("TODO: exercise16"); Pause(); }
-        public static void Exercise17() { Console.WriteLine("TODO: exercise17"); Pause(); }
-        public static void Exercise18() { Console.WriteLine("TODO: exercise18"); Pause(); }
-        public static void Exercise19() { Console.WriteLine("TODO: exercise19"); Pause(); }
-        public static void Exercise20() { Console.WriteLine("TODO: exercise20"); Pause(); }
+        public static void Exercise15()
+        {
+            Console.WriteLine("Exercise 15 - Distinct numbers");
+            var numbers = new List<int> {1,2,2,3,4,4,5};
+            var distinct = numbers.Distinct();
+            Console.WriteLine(string.Join(", ", distinct));
+            Pause();
+        }
+
+        public static void Exercise16()
+        {
+            Console.WriteLine("Exercise 16 - Sum of integers list");
+            var numbers = new List<int> {1,2,3,4,5};
+            Console.WriteLine($"Sum: {numbers.Sum()}");
+            Pause();
+        }
+
+        public static void Exercise17()
+        {
+            Console.WriteLine("Exercise 17 - Average student score");
+            var avg = GetStudents().Average(s => s.Score);
+            Console.WriteLine($"Average score: {avg}");
+            Pause();
+        }
+
+        public static void Exercise18()
+        {
+            Console.WriteLine("Exercise 18 - Group students by classification");
+            var groups = GetStudents().GroupBy(s =>
+            {
+                if (s.Score >= 8) return "Giỏi";
+                if (s.Score >= 6) return "Khá";
+                return "Trung bình";
+            });
+            foreach (var grp in groups)
+            {
+                Console.WriteLine($"{grp.Key}:");
+                foreach (var s in grp)
+                    Console.WriteLine($"  {s.Name} ({s.Score})");
+            }
+            Pause();
+        }
+
+        public static void Exercise19()
+        {
+            Console.WriteLine("Exercise 19 - Number that appears most");
+            var numbers = new List<int> {1,2,2,3,4,4,4,5,2};
+            var most = numbers.GroupBy(n => n)
+                              .OrderByDescending(g => g.Count())
+                              .First().Key;
+            Console.WriteLine($"Most frequent number: {most}");
+            Pause();
+        }
+
+        public static void Exercise20()
+        {
+            Console.WriteLine("Exercise 20 - Top 3 students by score");
+            var top3 = GetStudents().OrderByDescending(s => s.Score).Take(3);
+            foreach (var s in top3)
+                Console.WriteLine($"{s.Name}: {s.Score}");
+            Pause();
+        }
 
         private static void Pause()
         {
