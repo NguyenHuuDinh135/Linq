@@ -35,5 +35,9 @@ class Program
         // Bài 5. Bình phương các số
         var squaredNumbers = numbers.Select(n => n * n);
         Console.WriteLine("Bình phương: " + string.Join(", ", squaredNumbers));
+
+        // Bài 6. Đếm số chẵn
+        var evenCount = numbers.Count(n => n % 2 == 0);
+        Console.WriteLine("Số lượng số chẵn: " + evenCount);
     }
 }
