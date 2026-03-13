@@ -6,17 +6,19 @@ namespace NguyenHuuDinh_Linq
 {
     internal class Program
     {
+        // Thông tin sinh viên hiển thị ở đầu chương trình
         private const string StudentInfo = "Mã sinh viên: 23115053122305  Tên: Nguyễn Hữu Định  Lớp: 225LTC#01";
 
         static void Main(string[] args)
         {
+            // Vòng lặp chính để hiện menu liên tục
             while (true)
             {
                 Console.Clear();
                 Console.WriteLine(StudentInfo);
                 Console.WriteLine();
                 Console.WriteLine("=== LINQ Exercises Menu ===");
-                Console.WriteLine("1. Exercise 1 - Filter even numbers (numbers 1-8)");
+                Console.WriteLine("1. Exercise 1 - Lọc số chẵn (từ danh sách 1-8)");
                 Console.WriteLine("2. Exercise 2 - Filter numbers >5");
                 Console.WriteLine("3. Exercise 3 - Sort ascending");
                 Console.WriteLine("4. Exercise 4 - Sort descending");
@@ -121,6 +123,7 @@ namespace NguyenHuuDinh_Linq
 
     public static class Exercises
     {
+        // Trả về danh sách mẫu các sinh viên
         private static List<Student> GetStudents()
         {
             return new List<Student>
@@ -133,69 +136,76 @@ namespace NguyenHuuDinh_Linq
         }
         public static void Exercise1()
         {
-            Console.WriteLine("Exercise 1 - Filter even numbers");
+            // Bài 1: Lọc số chẵn từ danh sách
+            Console.WriteLine("Bài 1 - Lọc số chẵn");
             var numbers = new List<int> {1,2,3,4,5,6,7,8};
             var evens = numbers.Where(n => n % 2 == 0);
-            Console.WriteLine("Even numbers:");
+            Console.WriteLine("Các số chẵn:");
             Console.WriteLine(string.Join(", ", evens));
             Pause();
         }
 
         public static void Exercise2()
         {
-            Console.WriteLine("Exercise 2 - Filter numbers >5");
+            // Bài 2: Lọc số lớn hơn 5
+            Console.WriteLine("Bài 2 - Lọc số > 5");
             var numbers = new List<int> {1,2,3,4,5,6,7,8};
             var greater = numbers.Where(n => n > 5);
-            Console.WriteLine("Numbers greater than 5:");
+            Console.WriteLine("Các số > 5:");
             Console.WriteLine(string.Join(", ", greater));
             Pause();
         }
 
         public static void Exercise3()
         {
-            Console.WriteLine("Exercise 3 - Sort ascending");
+            // Bài 3: Sắp xếp tăng dần
+            Console.WriteLine("Bài 3 - Sắp xếp tăng dần");
             var numbers = new List<int> {8,3,5,1,7,2,6,4};
             var ordered = numbers.OrderBy(n => n);
-            Console.WriteLine("Sorted ascending:");
+            Console.WriteLine("Kết quả:");
             Console.WriteLine(string.Join(", ", ordered));
             Pause();
         }
 
         public static void Exercise4()
         {
-            Console.WriteLine("Exercise 4 - Sort descending");
+            // Bài 4: Sắp xếp giảm dần
+            Console.WriteLine("Bài 4 - Sắp xếp giảm dần");
             var numbers = new List<int> {8,3,5,1,7,2,6,4};
             var ordered = numbers.OrderByDescending(n => n);
-            Console.WriteLine("Sorted descending:");
+            Console.WriteLine("Kết quả:");
             Console.WriteLine(string.Join(", ", ordered));
             Pause();
         }
 
         public static void Exercise5()
         {
-            Console.WriteLine("Exercise 5 - Square numbers");
+            // Bài 5: Bình phương các số
+            Console.WriteLine("Bài 5 - Bình phương các số");
             var numbers = new List<int> {1,2,3};
             var squares = numbers.Select(n => n * n);
-            Console.WriteLine("Squares:");
+            Console.WriteLine("Kết quả:");
             Console.WriteLine(string.Join(", ", squares));
             Pause();
         }
 
         public static void Exercise6()
         {
-            Console.WriteLine("Exercise 6 - Count even numbers");
+            // Bài 6: Đếm số chẵn
+            Console.WriteLine("Bài 6 - Đếm số chẵn");
             var numbers = new List<int> {1,2,3,4,5,6,7,8};
             var count = numbers.Count(n => n % 2 == 0);
-            Console.WriteLine($"Number of even elements: {count}");
+            Console.WriteLine($"Số phần tử chẵn: {count}");
             Pause();
         }
 
         public static void Exercise7()
         {
-            Console.WriteLine("Exercise 7 - Any >10 check");
+            // Bài 7: Kiểm tra tồn tại số > 10
+            Console.WriteLine("Bài 7 - Có số >10 không");
             var numbers = new List<int> {1,2,3,4,5,6,7,8};
             var any = numbers.Any(n => n > 10);
-            Console.WriteLine(any ? "There is a number >10" : "No number >10");
+            Console.WriteLine(any ? "Có số lớn hơn 10" : "Không có");
             Pause();
         }
 
@@ -270,7 +280,8 @@ namespace NguyenHuuDinh_Linq
 
         public static void Exercise8()
         {
-            Console.WriteLine("Exercise 8 - Filter students score >= 8");
+            // Bài 8: Lọc sinh viên điểm >= 8
+            Console.WriteLine("Bài 8 - Sinh viên điểm >= 8");
             var students = GetStudents();
             var good = students.Where(s => s.Score >= 8);
             foreach (var s in good)
@@ -283,7 +294,8 @@ namespace NguyenHuuDinh_Linq
         // Part 2 & 3 placeholders
         public static void Exercise9()
         {
-            Console.WriteLine("Exercise 9 - List student names");
+            // Bài 9: Lấy danh sách tên sinh viên
+            Console.WriteLine("Bài 9 - Danh sách tên sinh viên");
             var students = GetStudents();
             var names = students.Select(s => s.Name);
             Console.WriteLine(string.Join(" ", names));
@@ -292,7 +304,8 @@ namespace NguyenHuuDinh_Linq
 
         public static void Exercise10()
         {
-            Console.WriteLine("Exercise 10 - Sort students by score desc");
+            // Bài 10: Sắp xếp sinh viên theo điểm giảm dần
+            Console.WriteLine("Bài 10 - Sắp xếp sinh viên theo điểm");
             var students = GetStudents().OrderByDescending(s => s.Score);
             foreach (var s in students)
                 Console.WriteLine($"{s.Name}: {s.Score}");
@@ -301,7 +314,8 @@ namespace NguyenHuuDinh_Linq
 
         public static void Exercise11()
         {
-            Console.WriteLine("Exercise 11 - Student with highest score");
+            // Bài 11: Sinh viên có điểm cao nhất
+            Console.WriteLine("Bài 11 - Sinh viên điểm cao nhất");
             var top = GetStudents().OrderByDescending(s => s.Score).FirstOrDefault();
             if (top != null) Console.WriteLine($"{top.Name}: {top.Score}");
             Pause();
@@ -309,31 +323,35 @@ namespace NguyenHuuDinh_Linq
 
         public static void Exercise12()
         {
-            Console.WriteLine("Exercise 12 - Count students score>=7");
+            // Bài 12: Đếm số sinh viên điểm >=7
+            Console.WriteLine("Bài 12 - Đếm sinh viên đạt");
             var count = GetStudents().Count(s => s.Score >= 7);
-            Console.WriteLine($"Count: {count}");
+            Console.WriteLine($"Số sinh viên đạt: {count}");
             Pause();
         }
 
         public static void Exercise13()
         {
-            Console.WriteLine("Exercise 13 - First student score>7");
+            // Bài 13: Sinh viên đầu tiên có điểm >7
+            Console.WriteLine("Bài 13 - Sinh viên đầu tiên điểm >7");
             var first = GetStudents().FirstOrDefault(s => s.Score > 7);
             if (first != null) Console.WriteLine($"{first.Name}: {first.Score}");
-            else Console.WriteLine("None");
+            else Console.WriteLine("Không có");
             Pause();
         }
 
         public static void Exercise14()
         {
-            Console.WriteLine("Exercise 14 - Any student failed score<5");
+            // Bài 14: Kiểm tra có sinh viên rớt (score <5)
+            Console.WriteLine("Bài 14 - Có sinh viên rớt không");
             var anyFail = GetStudents().Any(s => s.Score < 5);
-            Console.WriteLine(anyFail ? "There is a failing student" : "No failing students");
+            Console.WriteLine(anyFail ? "Có sinh viên rớt" : "Không có sinh viên rớt");
             Pause();
         }
         public static void Exercise15()
         {
-            Console.WriteLine("Exercise 15 - Distinct numbers");
+            // Bài 15: Loại bỏ phần tử trùng
+            Console.WriteLine("Bài 15 - Loại bỏ số trùng");
             var numbers = new List<int> {1,2,2,3,4,4,5};
             var distinct = numbers.Distinct();
             Console.WriteLine(string.Join(", ", distinct));
@@ -342,23 +360,26 @@ namespace NguyenHuuDinh_Linq
 
         public static void Exercise16()
         {
-            Console.WriteLine("Exercise 16 - Sum of integers list");
+            // Bài 16: Tính tổng
+            Console.WriteLine("Bài 16 - Tính tổng danh sách");
             var numbers = new List<int> {1,2,3,4,5};
-            Console.WriteLine($"Sum: {numbers.Sum()}");
+            Console.WriteLine($"Tổng: {numbers.Sum()}");
             Pause();
         }
 
         public static void Exercise17()
         {
-            Console.WriteLine("Exercise 17 - Average student score");
+            // Bài 17: Tính điểm trung bình sinh viên
+            Console.WriteLine("Bài 17 - Điểm trung bình sinh viên");
             var avg = GetStudents().Average(s => s.Score);
-            Console.WriteLine($"Average score: {avg}");
+            Console.WriteLine($"Điểm TB: {avg}");
             Pause();
         }
 
         public static void Exercise18()
         {
-            Console.WriteLine("Exercise 18 - Group students by classification");
+            // Bài 18: Nhóm sinh viên theo xếp loại
+            Console.WriteLine("Bài 18 - Nhóm theo xếp loại");
             var groups = GetStudents().GroupBy(s =>
             {
                 if (s.Score >= 8) return "Giỏi";
@@ -376,32 +397,36 @@ namespace NguyenHuuDinh_Linq
 
         public static void Exercise19()
         {
-            Console.WriteLine("Exercise 19 - Number that appears most");
+            // Bài 19: Tìm số xuất hiện nhiều nhất
+            Console.WriteLine("Bài 19 - Số xuất hiện nhiều nhất");
             var numbers = new List<int> {1,2,2,3,4,4,4,5,2};
             var most = numbers.GroupBy(n => n)
                               .OrderByDescending(g => g.Count())
                               .First().Key;
-            Console.WriteLine($"Most frequent number: {most}");
+            Console.WriteLine($"Số xuất hiện nhiều nhất: {most}");
             Pause();
         }
 
         public static void Exercise20()
         {
-            Console.WriteLine("Exercise 20 - Top 3 students by score");
+            // Bài 20: Lấy top 3 sinh viên điểm cao nhất
+            Console.WriteLine("Bài 20 - Top 3 sinh viên");
             var top3 = GetStudents().OrderByDescending(s => s.Score).Take(3);
             foreach (var s in top3)
                 Console.WriteLine($"{s.Name}: {s.Score}");
             Pause();
         }
 
+        // Dừng lại chờ người dùng nhấn phím
         private static void Pause()
         {
             Console.WriteLine();
-            Console.Write("Press any key to return to menu...");
+            Console.Write("Nhấn phím bất kỳ để về menu...");
             Console.ReadKey();
         }
     }
 
+    // Định nghĩa lớp sinh viên dùng trong bài tập
     public class Student
     {
         public int Id { get; set; }
