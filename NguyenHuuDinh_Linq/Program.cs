@@ -43,5 +43,22 @@ class Program
         // Bài 7. Kiểm tra có số lớn hơn 10 không
         var hasNumberGreaterThan10 = numbers.Any(n => n > 10);
         Console.WriteLine("Có số > 10: " + hasNumberGreaterThan10);
+
+        // Danh sách sinh viên
+        List<Student> students = new List<Student>()
+        {
+            new Student { Id = 1, Name = "An", Score = 8 },
+            new Student { Id = 2, Name = "Binh", Score = 6 },
+            new Student { Id = 3, Name = "Chi", Score = 9 },
+            new Student { Id = 4, Name = "Dung", Score = 7 }
+        };
+
+        // Bài 8. Lọc sinh viên điểm >= 8
+        var excellentStudents = students.Where(s => s.Score >= 8);
+        Console.WriteLine("Sinh viên giỏi:");
+        foreach (var student in excellentStudents)
+        {
+            Console.WriteLine($"Id: {student.Id}, Name: {student.Name}, Score: {student.Score}");
+        }
     }
 }
