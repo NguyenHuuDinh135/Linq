@@ -132,5 +132,19 @@ class Program
             .OrderByDescending(g => g.Count())
             .FirstOrDefault()?.Key;
         Console.WriteLine("Số xuất hiện nhiều nhất: " + mostFrequentNumber);
+
+        // Bài 20. Top 3 sinh viên điểm cao nhất
+        var top3Students = students.OrderByDescending(s => s.Score).Take(3);
+        Console.WriteLine("Top 3 sinh viên điểm cao nhất:");
+        foreach (var student in top3Students)
+        {
+            Console.WriteLine($"Id: {student.Id}, Name: {student.Name}, Score: {student.Score}");
+        }
+
+        // Thông tin sinh viên
+        Console.WriteLine("Mã sinh viên: 23115053122305");
+        Console.WriteLine("Tên: Nguyễn Hữu Định");
+        Console.WriteLine("Lớp: 225LTC#01");
+    }
     }
 }
