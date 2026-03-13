@@ -18,6 +18,8 @@ namespace NguyenHuuDinh_Linq
                 Console.WriteLine("4. Exercise 4 - Sum numbers 1 to 100");
                 Console.WriteLine("5. Exercise 5 - Order names alphabetically");
                 Console.WriteLine("6. Exercise 6 - Join students with scores");
+                Console.WriteLine("7. Exercise 7 - Find max number 1-100");
+                Console.WriteLine("8. Exercise 8 - Group names by length");
                 Console.WriteLine("0. Exit");
                 Console.Write("Choose an exercise: ");
 
@@ -47,6 +49,12 @@ namespace NguyenHuuDinh_Linq
                         break;
                     case 6:
                         Exercises.Exercise6();
+                        break;
+                    case 7:
+                        Exercises.Exercise7();
+                        break;
+                    case 8:
+                        Exercises.Exercise8();
                         break;
                     case 0:
                         return;
@@ -128,6 +136,26 @@ namespace NguyenHuuDinh_Linq
             foreach (var item in query)
             {
                 Console.WriteLine($"{item.Name}: {item.Score}");
+            }
+            Pause();
+        }
+
+        public static void Exercise7()
+        {
+            Console.WriteLine("Exercise 7 - Find max number 1-100");
+            var max = Enumerable.Range(1, 100).Max();
+            Console.WriteLine($"Maximum number from 1 to 100 is {max}");
+            Pause();
+        }
+
+        public static void Exercise8()
+        {
+            Console.WriteLine("Exercise 8 - Group names by length");
+            var names = new[] { "Anna", "Bob", "Christine", "David", "Eve" };
+            var groups = names.GroupBy(n => n.Length);
+            foreach (var grp in groups)
+            {
+                Console.WriteLine($"Names of length {grp.Key}: {string.Join(", ", grp)}");
             }
             Pause();
         }
