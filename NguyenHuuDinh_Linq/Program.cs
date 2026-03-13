@@ -31,5 +31,9 @@ class Program
         // Bài 4. Sắp xếp giảm dần
         var sortedDescending = numbers.OrderByDescending(n => n);
         Console.WriteLine("Sắp xếp giảm dần: " + string.Join(", ", sortedDescending));
+
+        // Bài 5. Bình phương các số
+        var squaredNumbers = numbers.Select(n => n * n);
+        Console.WriteLine("Bình phương: " + string.Join(", ", squaredNumbers));
     }
 }
