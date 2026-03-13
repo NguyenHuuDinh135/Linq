@@ -64,5 +64,13 @@ class Program
         // Bài 9. Lấy danh sách tên sinh viên
         var studentNames = students.Select(s => s.Name);
         Console.WriteLine("Tên sinh viên: " + string.Join(" ", studentNames));
+
+        // Bài 10. Sắp xếp theo điểm giảm dần
+        var studentsSortedByScore = students.OrderByDescending(s => s.Score);
+        Console.WriteLine("Sinh viên sắp xếp theo điểm giảm dần:");
+        foreach (var student in studentsSortedByScore)
+        {
+            Console.WriteLine($"Id: {student.Id}, Name: {student.Name}, Score: {student.Score}");
+        }
     }
 }
