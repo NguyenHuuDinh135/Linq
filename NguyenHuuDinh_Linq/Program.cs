@@ -83,5 +83,12 @@ class Program
         // Bài 12. Đếm số sinh viên đạt
         var passingStudentsCount = students.Count(s => s.Score >= 7);
         Console.WriteLine("Số sinh viên đạt: " + passingStudentsCount);
+
+        // Bài 13. Lấy sinh viên đầu tiên có điểm > 7
+        var firstStudentAbove7 = students.FirstOrDefault(s => s.Score > 7);
+        if (firstStudentAbove7 != null)
+        {
+            Console.WriteLine($"Sinh viên đầu tiên điểm > 7: Id: {firstStudentAbove7.Id}, Name: {firstStudentAbove7.Name}, Score: {firstStudentAbove7.Score}");
+        }
     }
 }
