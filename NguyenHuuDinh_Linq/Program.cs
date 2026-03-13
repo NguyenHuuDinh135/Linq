@@ -94,5 +94,12 @@ class Program
         // Bài 14. Kiểm tra có sinh viên rớt không
         var hasFailingStudent = students.Any(s => s.Score < 5);
         Console.WriteLine("Có sinh viên rớt: " + hasFailingStudent);
+
+        // Danh sách số có trùng
+        List<int> numbersWithDuplicates = new List<int> { 1, 2, 2, 3, 4, 4, 5 };
+
+        // Bài 15. Loại bỏ phần tử trùng
+        var distinctNumbers = numbersWithDuplicates.Distinct();
+        Console.WriteLine("Số không trùng: " + string.Join(", ", distinctNumbers));
     }
 }
