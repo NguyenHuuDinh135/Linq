@@ -16,14 +16,26 @@ namespace NguyenHuuDinh_Linq
                 Console.WriteLine(StudentInfo);
                 Console.WriteLine();
                 Console.WriteLine("=== LINQ Exercises Menu ===");
-                Console.WriteLine("1. Exercise 1 - Filter even numbers");
-                Console.WriteLine("2. Exercise 2 - Select names starting with A");
-                Console.WriteLine("3. Exercise 3 - Group words by first letter");
-                Console.WriteLine("4. Exercise 4 - Sum numbers 1 to 100");
-                Console.WriteLine("5. Exercise 5 - Order names alphabetically");
-                Console.WriteLine("6. Exercise 6 - Join students with scores");
-                Console.WriteLine("7. Exercise 7 - Find max number 1-100");
-                Console.WriteLine("8. Exercise 8 - Group names by length");
+                Console.WriteLine("1. Exercise 1 - Filter even numbers (numbers 1-8)");
+                Console.WriteLine("2. Exercise 2 - Filter numbers >5");
+                Console.WriteLine("3. Exercise 3 - Sort ascending");
+                Console.WriteLine("4. Exercise 4 - Sort descending");
+                Console.WriteLine("5. Exercise 5 - Square numbers");
+                Console.WriteLine("6. Exercise 6 - Count even numbers");
+                Console.WriteLine("7. Exercise 7 - Any >10 check");
+                Console.WriteLine("8. Exercise 8 - Filter students score>=8");
+                Console.WriteLine("9. Exercise 9 - List student names");
+                Console.WriteLine("10. Exercise 10 - Sort students by score desc");
+                Console.WriteLine("11. Exercise 11 - Student with highest score");
+                Console.WriteLine("12. Exercise 12 - Count students score>=7");
+                Console.WriteLine("13. Exercise 13 - First student score>7");
+                Console.WriteLine("14. Exercise 14 - Any student failed score<5");
+                Console.WriteLine("15. Exercise 15 - Distinct numbers");
+                Console.WriteLine("16. Exercise 16 - Sum of integers list");
+                Console.WriteLine("17. Exercise 17 - Average student score");
+                Console.WriteLine("18. Exercise 18 - Group students by classification");
+                Console.WriteLine("19. Exercise 19 - Number that appears most");
+                Console.WriteLine("20. Exercise 20 - Top 3 students by score");
                 Console.WriteLine("0. Exit");
                 Console.Write("Choose an exercise: ");
 
@@ -59,6 +71,42 @@ namespace NguyenHuuDinh_Linq
                         break;
                     case 8:
                         Exercises.Exercise8();
+                        break;
+                    case 9:
+                        Exercises.Exercise9();
+                        break;
+                    case 10:
+                        Exercises.Exercise10();
+                        break;
+                    case 11:
+                        Exercises.Exercise11();
+                        break;
+                    case 12:
+                        Exercises.Exercise12();
+                        break;
+                    case 13:
+                        Exercises.Exercise13();
+                        break;
+                    case 14:
+                        Exercises.Exercise14();
+                        break;
+                    case 15:
+                        Exercises.Exercise15();
+                        break;
+                    case 16:
+                        Exercises.Exercise16();
+                        break;
+                    case 17:
+                        Exercises.Exercise17();
+                        break;
+                    case 18:
+                        Exercises.Exercise18();
+                        break;
+                    case 19:
+                        Exercises.Exercise19();
+                        break;
+                    case 20:
+                        Exercises.Exercise20();
                         break;
                     case 0:
                         return;
@@ -163,6 +211,20 @@ namespace NguyenHuuDinh_Linq
             }
             Pause();
         }
+
+        // Part 2 & 3 placeholders
+        public static void Exercise9() { Console.WriteLine("TODO: exercise9"); Pause(); }
+        public static void Exercise10() { Console.WriteLine("TODO: exercise10"); Pause(); }
+        public static void Exercise11() { Console.WriteLine("TODO: exercise11"); Pause(); }
+        public static void Exercise12() { Console.WriteLine("TODO: exercise12"); Pause(); }
+        public static void Exercise13() { Console.WriteLine("TODO: exercise13"); Pause(); }
+        public static void Exercise14() { Console.WriteLine("TODO: exercise14"); Pause(); }
+        public static void Exercise15() { Console.WriteLine("TODO: exercise15"); Pause(); }
+        public static void Exercise16() { Console.WriteLine("TODO: exercise16"); Pause(); }
+        public static void Exercise17() { Console.WriteLine("TODO: exercise17"); Pause(); }
+        public static void Exercise18() { Console.WriteLine("TODO: exercise18"); Pause(); }
+        public static void Exercise19() { Console.WriteLine("TODO: exercise19"); Pause(); }
+        public static void Exercise20() { Console.WriteLine("TODO: exercise20"); Pause(); }
 
         private static void Pause()
         {
