@@ -79,5 +79,9 @@ class Program
         {
             Console.WriteLine($"Sinh viên điểm cao nhất: Id: {highestScoreStudent.Id}, Name: {highestScoreStudent.Name}, Score: {highestScoreStudent.Score}");
         }
+
+        // Bài 12. Đếm số sinh viên đạt
+        var passingStudentsCount = students.Count(s => s.Score >= 7);
+        Console.WriteLine("Số sinh viên đạt: " + passingStudentsCount);
     }
 }
