@@ -101,5 +101,9 @@ class Program
         // Bài 15. Loại bỏ phần tử trùng
         var distinctNumbers = numbersWithDuplicates.Distinct();
         Console.WriteLine("Số không trùng: " + string.Join(", ", distinctNumbers));
+
+        // Bài 16. Tính tổng
+        var sum = numbers.Sum();
+        Console.WriteLine("Tổng: " + sum);
     }
 }
