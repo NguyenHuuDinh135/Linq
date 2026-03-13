@@ -12,3 +12,4 @@
 /home/dinh/Downloads/Project/Linq/NguyenHuuDinh_Linq/obj/Debug/net10.0/NguyenHuuDinh_Linq.pdb
 /home/dinh/Downloads/Project/Linq/NguyenHuuDinh_Linq/obj/Debug/net10.0/NguyenHuuDinh_Linq.genruntimeconfig.cache
 /home/dinh/Downloads/Project/Linq/NguyenHuuDinh_Linq/obj/Debug/net10.0/ref/NguyenHuuDinh_Linq.dll
+/home/dinh/Downloads/Project/Linq/NguyenHuuDinh_Linq/obj/Debug/net10.0/NguyenHuuDinh_Linq.sourcelink.json
