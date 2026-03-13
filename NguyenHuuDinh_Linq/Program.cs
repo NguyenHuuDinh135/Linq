@@ -6,11 +6,15 @@ namespace NguyenHuuDinh_Linq
 {
     internal class Program
     {
+        private const string StudentInfo = "Mã sinh viên: 23115053122305  Tên: Nguyễn Hữu Định  Lớp: 225LTC#01";
+
         static void Main(string[] args)
         {
             while (true)
             {
                 Console.Clear();
+                Console.WriteLine(StudentInfo);
+                Console.WriteLine();
                 Console.WriteLine("=== LINQ Exercises Menu ===");
                 Console.WriteLine("1. Exercise 1 - Filter even numbers");
                 Console.WriteLine("2. Exercise 2 - Select names starting with A");
