@@ -125,5 +125,12 @@ class Program
                 Console.WriteLine($"  Id: {student.Id}, Name: {student.Name}, Score: {student.Score}");
             }
         }
+
+        // Bài 19. Tìm số xuất hiện nhiều nhất
+        var mostFrequentNumber = numbersWithDuplicates
+            .GroupBy(n => n)
+            .OrderByDescending(g => g.Count())
+            .FirstOrDefault()?.Key;
+        Console.WriteLine("Số xuất hiện nhiều nhất: " + mostFrequentNumber);
     }
 }
