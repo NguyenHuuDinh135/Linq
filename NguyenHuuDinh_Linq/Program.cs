@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -51,7 +51,11 @@ namespace NguyenHuuDinh_Linq
     {
         public static void Exercise1()
         {
-            // TODO: implement exercise 1
+            Console.WriteLine("Exercise 1 - Filter even numbers");
+            var numbers = Enumerable.Range(1, 20);
+            var evens = numbers.Where(n => n % 2 == 0);
+            Console.WriteLine("Even numbers from 1 to 20:");
+            Console.WriteLine(string.Join(", ", evens));
             Pause();
         }
 
