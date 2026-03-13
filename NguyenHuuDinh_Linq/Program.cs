@@ -27,5 +27,9 @@ class Program
         // Bài 3. Sắp xếp tăng dần
         var sortedAscending = numbers.OrderBy(n => n);
         Console.WriteLine("Sắp xếp tăng dần: " + string.Join(", ", sortedAscending));
+
+        // Bài 4. Sắp xếp giảm dần
+        var sortedDescending = numbers.OrderByDescending(n => n);
+        Console.WriteLine("Sắp xếp giảm dần: " + string.Join(", ", sortedDescending));
     }
 }
