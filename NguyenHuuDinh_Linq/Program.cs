@@ -121,13 +121,81 @@ namespace NguyenHuuDinh_Linq
 
     public static class Exercises
     {
+        private static List<Student> GetStudents()
+        {
+            return new List<Student>
+            {
+                new Student{Id=1, Name="An", Score=8},
+                new Student{Id=2, Name="Binh", Score=6},
+                new Student{Id=3, Name="Chi", Score=9},
+                new Student{Id=4, Name="Dung", Score=7}
+            };
+        }
         public static void Exercise1()
         {
             Console.WriteLine("Exercise 1 - Filter even numbers");
-            var numbers = Enumerable.Range(1, 20);
+            var numbers = new List<int> {1,2,3,4,5,6,7,8};
             var evens = numbers.Where(n => n % 2 == 0);
-            Console.WriteLine("Even numbers from 1 to 20:");
+            Console.WriteLine("Even numbers:");
             Console.WriteLine(string.Join(", ", evens));
+            Pause();
+        }
+
+        public static void Exercise2()
+        {
+            Console.WriteLine("Exercise 2 - Filter numbers >5");
+            var numbers = new List<int> {1,2,3,4,5,6,7,8};
+            var greater = numbers.Where(n => n > 5);
+            Console.WriteLine("Numbers greater than 5:");
+            Console.WriteLine(string.Join(", ", greater));
+            Pause();
+        }
+
+        public static void Exercise3()
+        {
+            Console.WriteLine("Exercise 3 - Sort ascending");
+            var numbers = new List<int> {8,3,5,1,7,2,6,4};
+            var ordered = numbers.OrderBy(n => n);
+            Console.WriteLine("Sorted ascending:");
+            Console.WriteLine(string.Join(", ", ordered));
+            Pause();
+        }
+
+        public static void Exercise4()
+        {
+            Console.WriteLine("Exercise 4 - Sort descending");
+            var numbers = new List<int> {8,3,5,1,7,2,6,4};
+            var ordered = numbers.OrderByDescending(n => n);
+            Console.WriteLine("Sorted descending:");
+            Console.WriteLine(string.Join(", ", ordered));
+            Pause();
+        }
+
+        public static void Exercise5()
+        {
+            Console.WriteLine("Exercise 5 - Square numbers");
+            var numbers = new List<int> {1,2,3};
+            var squares = numbers.Select(n => n * n);
+            Console.WriteLine("Squares:");
+            Console.WriteLine(string.Join(", ", squares));
+            Pause();
+        }
+
+        public static void Exercise6()
+        {
+            Console.WriteLine("Exercise 6 - Count even numbers");
+            var numbers = new List<int> {1,2,3,4,5,6,7,8};
+            var count = numbers.Count(n => n % 2 == 0);
+            Console.WriteLine($"Number of even elements: {count}");
+            Pause();
+        }
+
+        public static void Exercise7()
+        {
+            Console.WriteLine("Exercise 7 - Any >10 check");
+            var numbers = new List<int> {1,2,3,4,5,6,7,8};
+            var any = numbers.Any(n => n > 10);
+            Console.WriteLine(any ? "There is a number >10" : "No number >10");
             Pause();
         }
 
@@ -202,12 +270,12 @@ namespace NguyenHuuDinh_Linq
 
         public static void Exercise8()
         {
-            Console.WriteLine("Exercise 8 - Group names by length");
-            var names = new[] { "Anna", "Bob", "Christine", "David", "Eve" };
-            var groups = names.GroupBy(n => n.Length);
-            foreach (var grp in groups)
+            Console.WriteLine("Exercise 8 - Filter students score >= 8");
+            var students = GetStudents();
+            var good = students.Where(s => s.Score >= 8);
+            foreach (var s in good)
             {
-                Console.WriteLine($"Names of length {grp.Key}: {string.Join(", ", grp)}");
+                Console.WriteLine($"{s.Name} ({s.Score})");
             }
             Pause();
         }
@@ -232,5 +300,12 @@ namespace NguyenHuuDinh_Linq
             Console.Write("Press any key to return to menu...");
             Console.ReadKey();
         }
+    }
+
+    public class Student
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public double Score { get; set; }
     }
 }
