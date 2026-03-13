@@ -39,5 +39,9 @@ class Program
         // Bài 6. Đếm số chẵn
         var evenCount = numbers.Count(n => n % 2 == 0);
         Console.WriteLine("Số lượng số chẵn: " + evenCount);
+
+        // Bài 7. Kiểm tra có số lớn hơn 10 không
+        var hasNumberGreaterThan10 = numbers.Any(n => n > 10);
+        Console.WriteLine("Có số > 10: " + hasNumberGreaterThan10);
     }
 }
