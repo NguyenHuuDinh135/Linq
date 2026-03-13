@@ -74,7 +74,13 @@ namespace NguyenHuuDinh_Linq
 
         public static void Exercise3()
         {
-            // TODO: implement exercise 3
+            Console.WriteLine("Exercise 3 - Group words by first letter");
+            var words = new[] { "apple", "banana", "avocado", "cherry", "apricot", "blueberry" };
+            var groups = words.GroupBy(w => w[0]);
+            foreach (var grp in groups)
+            {
+                Console.WriteLine($"Words starting with '{grp.Key}': {string.Join(", ", grp)}");
+            }
             Pause();
         }
 
