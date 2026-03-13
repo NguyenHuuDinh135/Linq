@@ -23,5 +23,9 @@ class Program
         // Bài 2. Lọc số lớn hơn 5
         var numbersGreaterThan5 = numbers.Where(n => n > 5);
         Console.WriteLine("Các số > 5: " + string.Join(", ", numbersGreaterThan5));
+
+        // Bài 3. Sắp xếp tăng dần
+        var sortedAscending = numbers.OrderBy(n => n);
+        Console.WriteLine("Sắp xếp tăng dần: " + string.Join(", ", sortedAscending));
     }
 }
