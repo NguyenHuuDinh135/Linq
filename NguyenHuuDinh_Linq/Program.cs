@@ -105,5 +105,9 @@ class Program
         // Bài 16. Tính tổng
         var sum = numbers.Sum();
         Console.WriteLine("Tổng: " + sum);
+
+        // Bài 17. Tính trung bình
+        var averageScore = students.Average(s => s.Score);
+        Console.WriteLine("Điểm trung bình: " + averageScore);
     }
 }
