@@ -281,12 +281,56 @@ namespace NguyenHuuDinh_Linq
         }
 
         // Part 2 & 3 placeholders
-        public static void Exercise9() { Console.WriteLine("TODO: exercise9"); Pause(); }
-        public static void Exercise10() { Console.WriteLine("TODO: exercise10"); Pause(); }
-        public static void Exercise11() { Console.WriteLine("TODO: exercise11"); Pause(); }
-        public static void Exercise12() { Console.WriteLine("TODO: exercise12"); Pause(); }
-        public static void Exercise13() { Console.WriteLine("TODO: exercise13"); Pause(); }
-        public static void Exercise14() { Console.WriteLine("TODO: exercise14"); Pause(); }
+        public static void Exercise9()
+        {
+            Console.WriteLine("Exercise 9 - List student names");
+            var students = GetStudents();
+            var names = students.Select(s => s.Name);
+            Console.WriteLine(string.Join(" ", names));
+            Pause();
+        }
+
+        public static void Exercise10()
+        {
+            Console.WriteLine("Exercise 10 - Sort students by score desc");
+            var students = GetStudents().OrderByDescending(s => s.Score);
+            foreach (var s in students)
+                Console.WriteLine($"{s.Name}: {s.Score}");
+            Pause();
+        }
+
+        public static void Exercise11()
+        {
+            Console.WriteLine("Exercise 11 - Student with highest score");
+            var top = GetStudents().OrderByDescending(s => s.Score).FirstOrDefault();
+            if (top != null) Console.WriteLine($"{top.Name}: {top.Score}");
+            Pause();
+        }
+
+        public static void Exercise12()
+        {
+            Console.WriteLine("Exercise 12 - Count students score>=7");
+            var count = GetStudents().Count(s => s.Score >= 7);
+            Console.WriteLine($"Count: {count}");
+            Pause();
+        }
+
+        public static void Exercise13()
+        {
+            Console.WriteLine("Exercise 13 - First student score>7");
+            var first = GetStudents().FirstOrDefault(s => s.Score > 7);
+            if (first != null) Console.WriteLine($"{first.Name}: {first.Score}");
+            else Console.WriteLine("None");
+            Pause();
+        }
+
+        public static void Exercise14()
+        {
+            Console.WriteLine("Exercise 14 - Any student failed score<5");
+            var anyFail = GetStudents().Any(s => s.Score < 5);
+            Console.WriteLine(anyFail ? "There is a failing student" : "No failing students");
+            Pause();
+        }
         public static void Exercise15() { Console.WriteLine("TODO: exercise15"); Pause(); }
         public static void Exercise16() { Console.WriteLine("TODO: exercise16"); Pause(); }
         public static void Exercise17() { Console.WriteLine("TODO: exercise17"); Pause(); }
