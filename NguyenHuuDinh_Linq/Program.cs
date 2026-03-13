@@ -109,5 +109,21 @@ class Program
         // Bài 17. Tính trung bình
         var averageScore = students.Average(s => s.Score);
         Console.WriteLine("Điểm trung bình: " + averageScore);
+
+        // Bài 18. Nhóm sinh viên theo xếp loại
+        var groupedStudents = students.GroupBy(s =>
+        {
+            if (s.Score >= 8) return "Giỏi";
+            else if (s.Score >= 6) return "Khá";
+            else return "Trung bình";
+        });
+        foreach (var group in groupedStudents)
+        {
+            Console.WriteLine($"Xếp loại: {group.Key}");
+            foreach (var student in group)
+            {
+                Console.WriteLine($"  Id: {student.Id}, Name: {student.Name}, Score: {student.Score}");
+            }
+        }
     }
 }
