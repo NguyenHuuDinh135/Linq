@@ -90,5 +90,9 @@ class Program
         {
             Console.WriteLine($"Sinh viên đầu tiên điểm > 7: Id: {firstStudentAbove7.Id}, Name: {firstStudentAbove7.Name}, Score: {firstStudentAbove7.Score}");
         }
+
+        // Bài 14. Kiểm tra có sinh viên rớt không
+        var hasFailingStudent = students.Any(s => s.Score < 5);
+        Console.WriteLine("Có sinh viên rớt: " + hasFailingStudent);
     }
 }
