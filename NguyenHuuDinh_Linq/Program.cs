@@ -61,7 +61,14 @@ namespace NguyenHuuDinh_Linq
 
         public static void Exercise2()
         {
-            // TODO: implement exercise 2
+            Console.WriteLine("Exercise 2 - Select names starting with A");
+            var names = new List<string> { "Alice", "Bob", "Angela", "David", "Andrew" };
+            var aNames = names.Where(n => n.StartsWith("A", StringComparison.OrdinalIgnoreCase));
+            Console.WriteLine("Names that start with 'A':");
+            foreach (var name in aNames)
+            {
+                Console.WriteLine(name);
+            }
             Pause();
         }
 
