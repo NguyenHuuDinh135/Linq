@@ -60,5 +60,9 @@ class Program
         {
             Console.WriteLine($"Id: {student.Id}, Name: {student.Name}, Score: {student.Score}");
         }
+
+        // Bài 9. Lấy danh sách tên sinh viên
+        var studentNames = students.Select(s => s.Name);
+        Console.WriteLine("Tên sinh viên: " + string.Join(" ", studentNames));
     }
 }
